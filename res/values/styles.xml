@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:style/Theme.Light" >
+    	<!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="@style/AppBaseTheme" />
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    <style name="SettingsTheme" parent="android:style/Theme.Black" />
+    <style name="TileStyle">
+        <item name="android:textSize">@dimen/button_textsize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/btnbackground</item>
+        <item name="android:layout_marginLeft">5.0dip</item>
+        <item name="android:layout_marginTop">5.0dip</item>
+        <item name="android:layout_marginRight">5.0dip</item>
+        <item name="android:layout_marginBottom">5.0dip</item>
+    </style>
+    <style name="TileStyleleft" parent="@style/TileStyle" />
+    <style name="ScoreStyle">
+        <item name="android:background">@drawable/scorebackground</item>
+        <item name="android:layout_marginLeft">5.0dip</item>
+        <item name="android:layout_marginTop">5.0dip</item>
+        <item name="android:layout_marginRight">5.0dip</item>
+        <item name="android:layout_marginBottom">5.0dip</item>
+    </style>
+    <style name="radiostyle">
+        <item name="android:textSize">25.0sp</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">20.0dip</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawableRight">@*android:drawable/btn_radio</item>
+        <item name="android:drawablePadding">30.0dip</item>
+    </style>
+</resources>

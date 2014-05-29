@@ -1,0 +1,92 @@
+<com.gesuper.CustomCubic xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent"
+	android:orientation="vertical" android:background="@color/background_gray">
+
+	<LinearLayout 
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="horizontal" android:background="@color/background_gray"  >
+
+		<Button android:id="@+id/bt11"
+			android:layout_width="0.0dip" android:layout_height="fill_parent" 
+			android:layout_weight="1.0" style="@style/TileStyleleft" />
+
+		<Button android:id="@+id/bt12"
+			android:layout_width="0.0dip" android:layout_height="fill_parent" 
+			android:layout_weight="1.0" style="@style/TileStyleleft" />
+
+		<Button android:id="@+id/bt13"
+			android:layout_width="0.0dip" android:layout_height="fill_parent" 
+			android:layout_weight="1.0" style="@style/TileStyleleft" />
+
+		<Button android:id="@+id/bt14"
+			android:layout_width="0.0dip" android:layout_height="fill_parent" 
+			android:layout_weight="1.0" style="@style/TileStyleleft" />
+
+	</LinearLayout>
+        
+	<LinearLayout 
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="horizontal" android:background="@color/background_gray"  >
+
+		<Button android:id="@+id/bt21"
+			android:layout_width="0.0dip" android:layout_height="fill_parent" 
+			android:layout_weight="1.0" style="@style/TileStyleleft" />
+
+		<Button android:id="@+id/bt22"
+			android:layout_width="0.0dip" android:layout_height="fill_parent" 
+			android:layout_weight="1.0" style="@style/TileStyleleft" />
+
+		<Button android:id="@+id/bt23"
+			android:layout_width="0.0dip" android:layout_height="fill_parent" 
+			android:layout_weight="1.0" style="@style/TileStyleleft" />
+
+		<Button android:id="@+id/bt24"
+			android:layout_width="0.0dip" android:layout_height="fill_parent" 
+			android:layout_weight="1.0" style="@style/TileStyleleft" />
+
+	</LinearLayout>
+        
+	<LinearLayout 
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="horizontal" android:background="@color/background_gray"  >
+
+		<Button android:id="@+id/bt31"
+			android:layout_width="0.0dip" android:layout_height="fill_parent" 
+			android:layout_weight="1.0" style="@style/TileStyleleft" />
+
+		<Button android:id="@+id/bt32"
+			android:layout_width="0.0dip" android:layout_height="fill_parent" 
+			android:layout_weight="1.0" style="@style/TileStyleleft" />
+
+		<Button android:id="@+id/bt33"
+			android:layout_width="0.0dip" android:layout_height="fill_parent" 
+			android:layout_weight="1.0" style="@style/TileStyleleft" />
+
+		<Button android:id="@+id/bt34"
+			android:layout_width="0.0dip" android:layout_height="fill_parent" 
+			android:layout_weight="1.0" style="@style/TileStyleleft" />
+
+	</LinearLayout>
+        
+ 	<LinearLayout 
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="horizontal" android:background="@color/background_gray"  >
+
+		<Button android:id="@+id/bt41"
+			android:layout_width="0.0dip" android:layout_height="fill_parent" 
+			android:layout_weight="1.0" style="@style/TileStyleleft" />
+
+		<Button android:id="@+id/bt42"
+			android:layout_width="0.0dip" android:layout_height="fill_parent" 
+			android:layout_weight="1.0" style="@style/TileStyleleft" />
+
+		<Button android:id="@+id/bt43"
+			android:layout_width="0.0dip" android:layout_height="fill_parent" 
+			android:layout_weight="1.0" style="@style/TileStyleleft" />
+
+		<Button android:id="@+id/bt44"
+			android:layout_width="0.0dip" android:layout_height="fill_parent" 
+			android:layout_weight="1.0" style="@style/TileStyleleft" />
+
+	</LinearLayout>
+</com.gesuper.CustomCubic>

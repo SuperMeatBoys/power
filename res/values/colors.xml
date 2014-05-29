@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="color" name="common_signin_btn_dark_text_default">@*android:color/white</item>
+    <item type="color" name="common_signin_btn_dark_text_pressed">@*android:color/white</item>
+    <color name="common_signin_btn_dark_text_disabled">#ffaaaaaa</color>
+    <item type="color" name="common_signin_btn_dark_text_focused">@*android:color/white</item>
+    <color name="common_signin_btn_light_text_default">#ff737373</color>
+    <item type="color" name="common_signin_btn_light_text_pressed">@*android:color/white</item>
+    <color name="common_signin_btn_light_text_disabled">#ffaaaaaa</color>
+    <color name="common_signin_btn_light_text_focused">#ff737373</color>
+    <color name="common_signin_btn_default_background">#ffdd4b39</color>
+    <color name="common_action_bar_splitter">#ffd2d2d2</color>
+    <color name="background_gray">#ffbbada0</color>
+    <color name="emptycell_gray">#ffcdc0b4</color>
+    <color name="cell_2">#ffeee4da</color>
+    <color name="cell_4">#ffede0c8</color>
+    <color name="cell_8">#fff2b179</color>
+    <color name="cell_16">#fff59563</color>
+    <color name="cell_32">#fff67c5f</color>
+    <color name="cell_64">#fff65e3b</color>
+    <color name="cell_128">#ffedcc61</color>
+    <color name="cell_256">#ffedc850</color>
+    <color name="cell_512">#fff2b179</color>
+    <color name="cell_1024">#ffedc53f</color>
+    <color name="cell_2048">#ffedc53f</color>
+    <color name="overlay_bg">#b2000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="score_bg">#ff444444</color>
+</resources>
