@@ -10,13 +10,15 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class CustomCubic extends LinearLayout {
 	public static final String TAG = "CustomCubic";
+	private MainView mainView;
 	private int BUTTON_LINE_NUMBER = 4;
 	private int BUTTON_TOTAL_NUMBER = BUTTON_LINE_NUMBER*BUTTON_LINE_NUMBER;
 	private List<Integer> numbers;
-	private List<Button> Btns;
+	private List<TextView> Btns;
 	private boolean isChanged;
 	private int score;
 	private List<Integer> temp;
@@ -26,12 +28,13 @@ public class CustomCubic extends LinearLayout {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void initResources(Activity context) {
+	public void initResources(MainView mainView) {
 		// TODO Auto-generated method stub
 		this.isChanged = false;
 		this.score = 0;
+		this.mainView = mainView;
 		numbers = new ArrayList<Integer>(BUTTON_TOTAL_NUMBER);
-		Btns = new ArrayList<Button>(BUTTON_TOTAL_NUMBER);
+		Btns = new ArrayList<TextView>(BUTTON_TOTAL_NUMBER);
 		temp = new ArrayList<Integer>(BUTTON_LINE_NUMBER);
 		//Init numbers
 		for(int i=0;i<BUTTON_TOTAL_NUMBER;i++){
@@ -39,25 +42,25 @@ public class CustomCubic extends LinearLayout {
 		}
 		
 		//Init Btns
-		Btns.add((Button)context.findViewById(R.id.bt11));
-		Btns.add((Button)context.findViewById(R.id.bt12));
-		Btns.add((Button)context.findViewById(R.id.bt13));
-		Btns.add((Button)context.findViewById(R.id.bt14));
+		Btns.add((TextView)this.findViewById(R.id.bt11));
+		Btns.add((TextView)this.findViewById(R.id.bt12));
+		Btns.add((TextView)this.findViewById(R.id.bt13));
+		Btns.add((TextView)this.findViewById(R.id.bt14));
 		
-		Btns.add((Button)context.findViewById(R.id.bt21));
-		Btns.add((Button)context.findViewById(R.id.bt22));
-		Btns.add((Button)context.findViewById(R.id.bt23));
-		Btns.add((Button)context.findViewById(R.id.bt24));
+		Btns.add((TextView)this.findViewById(R.id.bt21));
+		Btns.add((TextView)this.findViewById(R.id.bt22));
+		Btns.add((TextView)this.findViewById(R.id.bt23));
+		Btns.add((TextView)this.findViewById(R.id.bt24));
 		
-		Btns.add((Button)context.findViewById(R.id.bt31));
-		Btns.add((Button)context.findViewById(R.id.bt32));
-		Btns.add((Button)context.findViewById(R.id.bt33));
-		Btns.add((Button)context.findViewById(R.id.bt34));
+		Btns.add((TextView)this.findViewById(R.id.bt31));
+		Btns.add((TextView)this.findViewById(R.id.bt32));
+		Btns.add((TextView)this.findViewById(R.id.bt33));
+		Btns.add((TextView)this.findViewById(R.id.bt34));
 		
-		Btns.add((Button)context.findViewById(R.id.bt41));
-		Btns.add((Button)context.findViewById(R.id.bt42));
-		Btns.add((Button)context.findViewById(R.id.bt43));
-		Btns.add((Button)context.findViewById(R.id.bt44));
+		Btns.add((TextView)this.findViewById(R.id.bt41));
+		Btns.add((TextView)this.findViewById(R.id.bt42));
+		Btns.add((TextView)this.findViewById(R.id.bt43));
+		Btns.add((TextView)this.findViewById(R.id.bt44));
 		this.add();
 		this.add();
 		this.add();
@@ -73,6 +76,7 @@ public class CustomCubic extends LinearLayout {
 				Btns.get(i).setText(" ");
 			}
 		}
+		this.mainView.changeScore(this.score);
 	}
 	
 	private void add(){
@@ -86,10 +90,9 @@ public class CustomCubic extends LinearLayout {
 		}
 		
 		int place = rand.nextInt(count) + 1;
-		for(int i=0;i<BUTTON_TOTAL_NUMBER;i++){
+		for(int i=0;i<=BUTTON_TOTAL_NUMBER;i++){
 			if(place == 0){
 				numbers.set(i-1, 2);
-				this.log(i);
 				break;
 			}
 			
@@ -285,5 +288,22 @@ public class CustomCubic extends LinearLayout {
 			this.isChanged = false;
 		}
 		updateBtns();
+	}
+
+	public void refresh() {
+		// TODO Auto-generated method stub
+		for(int i=0;i<BUTTON_TOTAL_NUMBER;i++){
+			numbers.set(i, 0);
+		}
+		this.updateBtns();
+		this.score = 0;
+
+		this.add();
+		this.add();
+		this.add();
+	}
+	
+	public interface OnScoreChanged {
+		public void changeScore(int score);
 	}
 }

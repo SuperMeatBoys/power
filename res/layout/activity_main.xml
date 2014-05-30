@@ -5,25 +5,25 @@
     android:background="@color/background_gray">
 	<com.gesuper.power.CustomCubic android:id="@+id/cubic"
 		android:layout_width="match_parent" android:layout_height="wrap_content"
-		android:orientation="vertical" android:background="@color/background_gray">
+		android:orientation="vertical">
 	
 		<LinearLayout 
 			android:layout_width="fill_parent" android:layout_height="wrap_content"
 			android:orientation="horizontal" android:background="@color/background_gray"  >
 	
-			<Button android:id="@+id/bt11"
+			<com.gesuper.power.CustomButton android:id="@+id/bt11"
 				android:layout_width="0.0dip" android:layout_height="fill_parent" 
 				android:layout_weight="1.0" style="@style/TileStyleleft" />
 	
-			<Button android:id="@+id/bt12"
+			<com.gesuper.power.CustomButton android:id="@+id/bt12"
 				android:layout_width="0.0dip" android:layout_height="fill_parent" 
 				android:layout_weight="1.0" style="@style/TileStyleleft" />
 	
-			<Button android:id="@+id/bt13"
+			<com.gesuper.power.CustomButton android:id="@+id/bt13"
 				android:layout_width="0.0dip" android:layout_height="fill_parent" 
 				android:layout_weight="1.0" style="@style/TileStyleleft" />
 	
-			<Button android:id="@+id/bt14"
+			<com.gesuper.power.CustomButton android:id="@+id/bt14"
 				android:layout_width="0.0dip" android:layout_height="fill_parent" 
 				android:layout_weight="1.0" style="@style/TileStyleleft" />
 	
@@ -33,19 +33,19 @@
 			android:layout_width="fill_parent" android:layout_height="wrap_content"
 			android:orientation="horizontal" android:background="@color/background_gray"  >
 	
-			<Button android:id="@+id/bt21"
+			<com.gesuper.power.CustomButton android:id="@+id/bt21"
 				android:layout_width="0.0dip" android:layout_height="fill_parent" 
 				android:layout_weight="1.0" style="@style/TileStyleleft" />
 	
-			<Button android:id="@+id/bt22"
+			<com.gesuper.power.CustomButton android:id="@+id/bt22"
 				android:layout_width="0.0dip" android:layout_height="fill_parent" 
 				android:layout_weight="1.0" style="@style/TileStyleleft" />
 	
-			<Button android:id="@+id/bt23"
+			<com.gesuper.power.CustomButton android:id="@+id/bt23"
 				android:layout_width="0.0dip" android:layout_height="fill_parent" 
 				android:layout_weight="1.0" style="@style/TileStyleleft" />
 	
-			<Button android:id="@+id/bt24"
+			<com.gesuper.power.CustomButton android:id="@+id/bt24"
 				android:layout_width="0.0dip" android:layout_height="fill_parent" 
 				android:layout_weight="1.0" style="@style/TileStyleleft" />
 	
@@ -55,19 +55,19 @@
 			android:layout_width="fill_parent" android:layout_height="wrap_content"
 			android:orientation="horizontal" android:background="@color/background_gray"  >
 	
-			<Button android:id="@+id/bt31"
+			<com.gesuper.power.CustomButton android:id="@+id/bt31"
 				android:layout_width="0.0dip" android:layout_height="fill_parent" 
 				android:layout_weight="1.0" style="@style/TileStyleleft" />
 	
-			<Button android:id="@+id/bt32"
+			<com.gesuper.power.CustomButton android:id="@+id/bt32"
 				android:layout_width="0.0dip" android:layout_height="fill_parent" 
 				android:layout_weight="1.0" style="@style/TileStyleleft" />
 	
-			<Button android:id="@+id/bt33"
+			<com.gesuper.power.CustomButton android:id="@+id/bt33"
 				android:layout_width="0.0dip" android:layout_height="fill_parent" 
 				android:layout_weight="1.0" style="@style/TileStyleleft" />
 	
-			<Button android:id="@+id/bt34"
+			<com.gesuper.power.CustomButton android:id="@+id/bt34"
 				android:layout_width="0.0dip" android:layout_height="fill_parent" 
 				android:layout_weight="1.0" style="@style/TileStyleleft" />
 	
@@ -77,19 +77,19 @@
 			android:layout_width="fill_parent" android:layout_height="wrap_content"
 			android:orientation="horizontal" android:background="@color/background_gray"  >
 	
-			<Button android:id="@+id/bt41"
+			<com.gesuper.power.CustomButton android:id="@+id/bt41"
 				android:layout_width="0.0dip" android:layout_height="fill_parent" 
 				android:layout_weight="1.0" style="@style/TileStyleleft" />
 	
-			<Button android:id="@+id/bt42"
+			<com.gesuper.power.CustomButton android:id="@+id/bt42"
 				android:layout_width="0.0dip" android:layout_height="fill_parent" 
 				android:layout_weight="1.0" style="@style/TileStyleleft" />
 	
-			<Button android:id="@+id/bt43"
+			<com.gesuper.power.CustomButton android:id="@+id/bt43"
 				android:layout_width="0.0dip" android:layout_height="fill_parent" 
 				android:layout_weight="1.0" style="@style/TileStyleleft" />
 	
-			<Button android:id="@+id/bt44"
+			<com.gesuper.power.CustomButton android:id="@+id/bt44"
 				android:layout_width="0.0dip" android:layout_height="fill_parent" 
 				android:layout_weight="1.0" style="@style/TileStyleleft" />
 	
@@ -97,19 +97,21 @@
 
 	</com.gesuper.power.CustomCubic>
 	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content" >
+		android:layout_width="match_parent" android:layout_height="wrap_content"
+		android:orientation="horizontal" android:layout_marginTop="30dip">
 		<TextView
-	 	    android:id="@+id/score"
-	 	    android:layout_width="wrap_content"
+	 	    android:id="@+id/score_tv"
+	 	    android:layout_width="0.0dip"
 	 	    android:layout_height="wrap_content"
-	 	    android:text="@string/score" />
+	 	    android:text="@string/score" android:layout_weight="1.0"
+	 	    style="@style/ScoreStyle"/>
 		
 		<TextView
-	 	    android:id="@+id/highest_score"
-	 	    android:layout_width="wrap_content"
+	 	    android:id="@+id/highest_tv"
+	 	    android:layout_width="0.0dip" android:layout_weight="1.0"
 	 	    android:layout_height="wrap_content"
-	 	    android:text="@string/score" />
+	 	    android:text="@string/highest"
+	 	    style="@style/ScoreStyle" />
 	</LinearLayout>
 	
 </LinearLayout>
