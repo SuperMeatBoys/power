@@ -78,7 +78,7 @@ public class MainActivity extends Activity implements OnTouchListener, OnGesture
 			return true;
 		}
 
-		if(Math.abs(dX) > 2*Math.abs(dY) && Math.abs(dX) >= verticalMinDistance){
+		if(Math.abs(dX) > 2*Math.abs(dY)){
 			//left or right
 			if(dX > 0) {
 				//To Right

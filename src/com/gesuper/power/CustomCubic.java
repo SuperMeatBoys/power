@@ -19,6 +19,7 @@ public class CustomCubic extends LinearLayout {
 	private List<Button> Btns;
 	private boolean isChanged;
 	private int score;
+	private List<Integer> temp;
 	
 	public CustomCubic(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -31,7 +32,7 @@ public class CustomCubic extends LinearLayout {
 		this.score = 0;
 		numbers = new ArrayList<Integer>(BUTTON_TOTAL_NUMBER);
 		Btns = new ArrayList<Button>(BUTTON_TOTAL_NUMBER);
-		
+		temp = new ArrayList<Integer>(BUTTON_LINE_NUMBER);
 		//Init numbers
 		for(int i=0;i<BUTTON_TOTAL_NUMBER;i++){
 			numbers.add(0);
@@ -111,18 +112,23 @@ public class CustomCubic extends LinearLayout {
 		
 		for(int i=0; i<BUTTON_LINE_NUMBER; i++){
 			count = 0; step = 0;
+			this.temp.clear();
+			for(int j=0;j<BUTTON_LINE_NUMBER;j++){
+				if(numbers.get(i*BUTTON_LINE_NUMBER + j) != 0){
+					this.temp.add(numbers.get(i*BUTTON_LINE_NUMBER + j));
+				}
+			}
+			count = this.temp.size();
+			if(count < BUTTON_LINE_NUMBER) this.isChanged = true;
+			for(int j=0;j<BUTTON_LINE_NUMBER;j++){
+				numbers.set(i*BUTTON_LINE_NUMBER + j, j<count?this.temp.get(j):0);
+			}
 			
-			while(count < BUTTON_LINE_NUMBER - 1){
-				count += 1;
+			while(count > 1){
+				count -= 1;
 				a = numbers.get(i*BUTTON_LINE_NUMBER + step);
 				b = numbers.get(i*BUTTON_LINE_NUMBER + step + 1);
-				if(0 == a){
-					this.isChanged = true;
-					for(int j=step;j<BUTTON_LINE_NUMBER-1;j++){ 
-						numbers.set(i*BUTTON_LINE_NUMBER + j, numbers.get(i*BUTTON_LINE_NUMBER + j + 1));
-					}
-					numbers.set((i+1)*(BUTTON_LINE_NUMBER ) -1, 0);
-				} else if(a == b){
+				if(a == b){
 					this.isChanged = true;
 					numbers.set(i*BUTTON_LINE_NUMBER + step, a+b);
 					this.score += a+b;
@@ -131,10 +137,11 @@ public class CustomCubic extends LinearLayout {
 					}
 					numbers.set((i+1)*(BUTTON_LINE_NUMBER ) -1, 0);
 					step += 1;
-				}else if(a != b){
+				}else{
 					step += 1;
 				}
 			}
+			this.log(i);
 
 		}
 		if(this.isChanged){
@@ -149,8 +156,20 @@ public class CustomCubic extends LinearLayout {
 		
 		for(int i=0; i<BUTTON_LINE_NUMBER; i++){
 			count = 0; step = BUTTON_LINE_NUMBER - 1;
-			while(count < BUTTON_LINE_NUMBER - 1){
-				count += 1;
+			this.temp.clear();
+			for(int j=0;j<BUTTON_LINE_NUMBER;j++){
+				if(numbers.get(i*BUTTON_LINE_NUMBER + j) != 0){
+					this.temp.add(numbers.get(i*BUTTON_LINE_NUMBER + j));
+				}
+			}
+			count = this.temp.size();
+			if(count < BUTTON_LINE_NUMBER) this.isChanged = true;
+			for(int j=BUTTON_LINE_NUMBER;j>0;j--){
+				numbers.set(i*BUTTON_LINE_NUMBER + j -1, j+count>BUTTON_LINE_NUMBER?this.temp.get(j+count-BUTTON_LINE_NUMBER-1):0);
+			}
+			
+			while(count > 1){
+				count -= 1;
 				a = numbers.get(i*BUTTON_LINE_NUMBER + step);
 				b = numbers.get(i*BUTTON_LINE_NUMBER + step - 1);
 				if(0 == a){
@@ -183,17 +202,23 @@ public class CustomCubic extends LinearLayout {
 		
 		for(int i=0; i<BUTTON_LINE_NUMBER; i++){
 			count = 0; step = 0;
-			while(count < BUTTON_LINE_NUMBER - 1){
-				count += 1;
+			this.temp.clear();
+			for(int j=0;j<BUTTON_LINE_NUMBER;j++){
+				if(numbers.get(i + j*BUTTON_LINE_NUMBER) != 0){
+					this.temp.add(numbers.get(i + j*BUTTON_LINE_NUMBER));
+				}
+			}
+			count = this.temp.size();
+			if(count < BUTTON_LINE_NUMBER) this.isChanged = true;
+			for(int j=0;j<BUTTON_LINE_NUMBER;j++){
+				numbers.set(i + j*BUTTON_LINE_NUMBER, j<count?this.temp.get(j):0);
+			}
+			
+			while(count > 1){
+				count -= 1;
 				a = numbers.get(i + step*BUTTON_LINE_NUMBER);
 				b = numbers.get(i + (step + 1)*BUTTON_LINE_NUMBER);
-				if(0 == a){
-					this.isChanged = true;
-					for(int j=step;j<BUTTON_LINE_NUMBER-1;j++){ 
-						numbers.set(i + j*BUTTON_LINE_NUMBER, numbers.get(i + (j + 1)*BUTTON_LINE_NUMBER));
-					}
-					numbers.set(i + BUTTON_LINE_NUMBER*(BUTTON_LINE_NUMBER - 1), 0);
-				}else if(a == b){
+				if(a == b){
 					this.isChanged = true;
 					numbers.set(i + step*BUTTON_LINE_NUMBER, a+b);
 					for(int j=step + 1;j<BUTTON_LINE_NUMBER-1;j++){ 
@@ -201,7 +226,7 @@ public class CustomCubic extends LinearLayout {
 					}
 					numbers.set(i + BUTTON_LINE_NUMBER*(BUTTON_LINE_NUMBER - 1), 0);
 					step += 1;
-				}else if(a != b){
+				}else {
 					step += 1;
 				}
 
@@ -220,8 +245,20 @@ public class CustomCubic extends LinearLayout {
 		
 		for(int i=0; i<BUTTON_LINE_NUMBER; i++){
 			count = 0; step = BUTTON_LINE_NUMBER - 1;
-			while(count < BUTTON_LINE_NUMBER - 1){
-				count += 1;
+			this.temp.clear();
+			for(int j=0;j<BUTTON_LINE_NUMBER;j++){
+				if(numbers.get(i + j*BUTTON_LINE_NUMBER) != 0){
+					this.temp.add(numbers.get(i + j*BUTTON_LINE_NUMBER));
+				}
+			}
+			count = this.temp.size();
+			if(count < BUTTON_LINE_NUMBER) this.isChanged = true;
+			for(int j=BUTTON_LINE_NUMBER;j>0;j++){
+				numbers.set(i + j*BUTTON_LINE_NUMBER, j+count>BUTTON_LINE_NUMBER?this.temp.get(j+count-BUTTON_LINE_NUMBER-1):0);
+			}
+			
+			while(count > 1){
+				count -= 1;
 				a = numbers.get(i + step*BUTTON_LINE_NUMBER);
 				b = numbers.get(i + (step - 1)*BUTTON_LINE_NUMBER);
 				if(0 == a){
